@@ -7,6 +7,9 @@
 * Task 5: list all local variables
 * Task 6: Create global variable
 * Task 7: Create local variable
-* Task 8: Shell Arithmetric : Addition
-* Task 9: Shell Arithmetric II : Divide
-* Task 10: Shell Arithmetric III : Power
+* Task 8: Shell Arithmetic : Addition
+* Task 9: Shell Arithmetic II : Divide
+* Task 10: Shell Arithmetic III : Power
+* Task 11: Shell Arithmetic IV: Base 2 to 10
+* Task 12: All possible combinations of two letters except oo
+* Task 13: Script that prints a number with two decimal
