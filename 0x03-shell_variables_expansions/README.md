@@ -7,3 +7,4 @@
 * Task 5: list all local variables
 * Task 6: Create global variable
 * Task 7: Create local variable
+* Task 8: Shell Arithmetric
