@@ -7,4 +7,6 @@
 * Task 5: list all local variables
 * Task 6: Create global variable
 * Task 7: Create local variable
-* Task 8: Shell Arithmetric
+* Task 8: Shell Arithmetric : Addition
+* Task 9: Shell Arithmetric II : Divide
+* Task 10: Shell Arithmetric III : Power
