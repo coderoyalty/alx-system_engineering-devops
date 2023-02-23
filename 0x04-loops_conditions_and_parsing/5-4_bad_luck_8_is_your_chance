@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# displays bad luck for 4th iter, good luck for the 8th iter
+# while looping from 1 to 10, display:
+# "bad luck" for 4th iter, 
+# "good luck" for the 8th iter
+# "Best School" for other iter
 
 i=0
 
