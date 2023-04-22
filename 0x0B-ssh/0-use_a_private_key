@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# establish a connect to ubuntu@3.84.239.245 using
+# establish a connect to ubuntu@54.157.152.234 using
 # a private key at ~/.ssh/school
 
-ssh -i ~/.ssh/school ubuntu@3.84.239.245
+ssh -i ~/.ssh/school ubuntu@54.157.152.234
 
