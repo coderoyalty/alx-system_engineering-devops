@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# starts my server using these commands
+
+/etc/init.d/apache2 start
