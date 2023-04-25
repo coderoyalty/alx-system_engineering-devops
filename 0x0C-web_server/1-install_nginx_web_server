@@ -1,27 +1,27 @@
 #!/usr/bin/env bash
 #install nginx web server
 
-# update
+# update package lists and install nginx
 apt-get update -y
-# install nginx
 apt-get install -y nginx
-# allow to listen at :80
+
+# allow nginx to listen on port 80
 ufw allow 'Nginx HTTP'
+
+#file to server
+mkdir -p /var/www/alx_school
+echo "Hello World!" > /var/www/alx_school/index.html
 
 echo "server {
 	listen 80;
 	listen [::]:80;
 
 	root /var/www/alx_school;
-	index index.htm index.html;
+	index index.html;
 	location / {
+		try_files \$uri \$uri/ =404;
 	}
-}" > /etc/nginx/nginx.conf
-
-#file to server
-
-mkdir -p /var/www/alx_school
-echo "Hello World!" > /var/www/alx_school/index.html
+}" >> /etc/nginx/sites-available/default
 
 #restart nginx
 service nginx restart
