@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Transfer a file to your server
+
+if [ $# -lt 3 ]; then
+	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+else
+	FILE_PATH=$1
+	SERVER_IP=$2
+	USERNAME=$3
+	PRIVATE_KEY=$4
+	DEST='~/'
+	scp -i $PRIVATE_KEY $FILE_PATH $USERNAME@$SERVER_IP:$DEST
+fi
