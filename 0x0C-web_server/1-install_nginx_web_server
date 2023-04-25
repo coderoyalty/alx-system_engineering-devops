@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# install nginx web server
+#install nginx web server
 
 # update
-apt-get update -y
+apt-get update
 # install nginx
 apt-get install -y nginx
 # allow to listen at :80
@@ -10,5 +10,6 @@ ufw allow 'Nginx HTTP'
 
 # file to server
 echo "Hello World!" > /var/www/html/index.html
+
 #restart nginx
 service nginx restart
