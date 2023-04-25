@@ -2,13 +2,13 @@
 # install nginx web server
 
 # update
-sudo apt update -y
+apt-get update -y
 # install nginx
-sudo apt install -y nginx
+apt-get install -y nginx
 # allow to listen at :80
-sudo ufw allow 'Nginx HTTP'
+ufw allow 'Nginx HTTP'
 
 # file to server
 echo "Hello World!" > /var/www/html/index.html
 #restart nginx
-sudo service nginx restart
+service nginx restart
