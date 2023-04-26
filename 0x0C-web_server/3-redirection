@@ -3,7 +3,7 @@
 # /redirect_me is redirecting to another page.
 
 # update and install nginx
-apt-get update
+apt-get update -y
 apt-get install -y nginx
 
 # setup a html page for it
