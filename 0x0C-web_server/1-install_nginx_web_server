@@ -1,27 +1,10 @@
 #!/usr/bin/env bash
-#install nginx web server
+# install nginx web server
 
-# update package lists and install nginx
-apt-get update -y
-apt-get install -y nginx
+sudo apt-get -y update
 
-# allow nginx to listen on port 80
-ufw allow 'Nginx HTTP'
+sudo apt-get -y install nginx
 
-#file to server
-mkdir -p /var/www/alx_school
-echo "Hello World!" > /var/www/alx_school/index.html
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
 
-echo "server {
-	listen 80;
-	listen [::]:80;
-
-	root /var/www/alx_school;
-	index index.html;
-	location / {
-		try_files \$uri \$uri/ =404;
-	}
-}" >> /etc/nginx/sites-available/default
-
-#restart nginx
-service nginx restart
+sudo service nginx restart
