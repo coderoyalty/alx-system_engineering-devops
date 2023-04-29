@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# script to install and configure a HAproxy
+
+# update the sandbox and install hapoxy
+apt-get update -y
+apt-get install -y haproxy
+
+# enable managing HAproxy via an init script
+sed -i "s/ENABLED=0/ENABLED=1/" /etc/default/haproxy
+
+#backup haproxy configuration file.
+cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.original
+
+MY_ID=185036
+
+# configuration the web-01, web-02, and use roundrobin
+# algorithm for the load balancer.
+echo "
+listen $MY_ID-lb-01
+	bind *:80
+	balance roundrobin
+	server $MY_ID-web-01 54.157.152.234:80 check
+	server $MY_ID-web-02 100.25.188.157:80 check
+" >> /etc/haproxy/haproxy.cfg
+
+# restart haproxy
+service haproxy restart
