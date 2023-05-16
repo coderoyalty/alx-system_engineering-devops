@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# run nginx as nginx user
+
+# kills apache2 to avoid it from using the ports
+pkill apache2
+# change the port
+sed -i "s/listen 80 default_server/listen 8080 default_server/" /etc/nginx/sites-available/default
+sed -i "s/listen [::]:80 default_server ipv6only=on/listen [::]:8080 default_server ipv6only=on/" /etc/nginx/sites-available/default
+# change nginx owner
+chown nginx:nginx /etc/nginx/nginx.conf
+# reload and restart
+service nginx reload
+service nginx restart
