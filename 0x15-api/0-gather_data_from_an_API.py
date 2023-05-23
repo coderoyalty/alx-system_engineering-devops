@@ -20,8 +20,9 @@ if __name__ == '__main__':
                 if todo.get("completed") is True:
                     completed_todos.append(todo)
             completed = len(completed_todos)
+            total = len(todos)
             print("Employee {} is done with tasks({}/{}):".format(
-                employee_name, completed, len(todos)
+                employee_name, completed, total
             ))
             for todo in completed_todos:
                 title = todo.get('title')
