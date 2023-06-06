@@ -19,7 +19,7 @@ def top_ten(subreddit):
     }
     api_url = 'https://www.reddit.com/r'
     type_ = 'hot'
-    url = '{}/{}/{}.json?raw_json=1'.format(
+    url = '{}/{}/{}.json?raw_json=1&limit=10'.format(
         api_url, subreddit, type_
     )
     res = requests.get(url, headers=headers)
@@ -28,7 +28,6 @@ def top_ten(subreddit):
     else:
         data = res.json()
         posts = data["data"]["children"]
-        posts = posts[0:10]
         for post in posts:
             title = post['data']["title"]
             print(title)
