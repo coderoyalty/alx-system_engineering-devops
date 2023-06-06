@@ -25,9 +25,10 @@ def top_ten(subreddit):
     res = requests.get(url, headers=headers)
     if not res.ok:
         print(None)
-        pass
-    posts = res.json().get("data")["children"]
-    posts = posts[:10]
-    for post in posts:
-        title = post.get('data')["title"]
-        print(title)
+    else:
+        data = res.json()
+        posts = data["data"]["children"]
+        posts = posts[0:10]
+        for post in posts:
+            title = post['data']["title"]
+            print(title)
